@@ -19,18 +19,18 @@
     .note { color: var(--text-dim); max-width: 60ch; margin-top: 20px; }
 
     .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; }
-    .swatch { border-radius: 20px; overflow: hidden; border: 1px solid var(--line); }
+    .swatch { border-radius: 4px; overflow: hidden; border: 1px solid var(--line); }
     .swatch__c { height: 140px; }
     .swatch__t { padding: 14px 16px; font-size: .85rem; background: rgba(255,255,255,.03); }
     .swatch__t b { display: block; font-size: 1rem; }
     .swatch__t code { color: var(--text-dim); }
-    .ratio { display: flex; height: 26px; border-radius: 999px; overflow: hidden; margin-top: 20px; }
+    .ratio { display: flex; height: 26px; overflow: hidden; margin-top: 20px; }
 
     .type-row { display: grid; grid-template-columns: 140px 1fr; gap: 24px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--line); }
     .type-row small { color: var(--text-dim); font-size: .78rem; letter-spacing: .08em; }
 
     .logos { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
-    .logo-tile { aspect-ratio: 4/3; border-radius: 20px; display: grid; place-items: center; gap: 12px; padding: 24px; }
+    .logo-tile { aspect-ratio: 4/3; border-radius: 4px; display: grid; place-items: center; gap: 12px; padding: 24px; }
     .logo-tile img { width: 88px; }
     .logo-tile span { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
 
@@ -115,7 +115,7 @@
           <a class="btn btn--light" href="#">Sur fond bleu</a>
           <span class="tag" style="background:rgba(255,255,255,.12)">Étiquette</span>
         </div>
-        <p class="note">Boutons en pilule, rayon des cartes 28 px, filets à 14 % de blanc. Au survol, le fond d'un bouton se remplit comme un bassin qui monte.</p>
+        <p class="note">Angles nets : 2 px pour les boutons et étiquettes, 4 px pour les cartes. Filets à 14 % de blanc, lignes d'eau horizontales en motif. Au survol, le fond d'un bouton se remplit comme un bassin qui monte.</p>
       </div>
     </section>
 

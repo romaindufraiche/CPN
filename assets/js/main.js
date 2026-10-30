@@ -21,6 +21,30 @@
   burger.addEventListener('click', () => toggleMenu(!body.classList.contains('menu-open')));
   $$('.menu a').forEach((a) => a.addEventListener('click', () => toggleMenu(false)));
 
+  /* ---------- Onglets « Trouver son groupe » ---------- */
+  const tabs = $$('.groups__tabs [role="tab"]');
+  const selectTab = (tab) => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      $(`#${t.getAttribute('aria-controls')}`).hidden = !on;
+    });
+    const items = $$(`#${tab.getAttribute('aria-controls')} li`);
+    if (window.gsap && !reduced) gsap.fromTo(items, { y: 16, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: .5, stagger: .03, ease: 'power3.out' });
+  };
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => selectTab(tab));
+    tab.addEventListener('keydown', (e) => {
+      const d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (!d) return;
+      e.preventDefault();
+      const next = tabs[(i + d + tabs.length) % tabs.length];
+      next.focus();
+      selectTab(next);
+    });
+  });
+
   /* ---------- Sans GSAP ou mouvement réduit : version statique ---------- */
   if (reduced || !window.gsap || !window.ScrollTrigger) {
     root.classList.add('no-motion');
@@ -66,7 +90,7 @@
   const countEl = $('.js-count');
 
   gsap.set('.hero__title .word', { yPercent: 115 });
-  gsap.set(['.hero__eyebrow', '.hero__tagline', '.hero__actions > *', '.hero__scroll'], { autoAlpha: 0, y: 30 });
+  gsap.set(['.hero__tagline', '.hero__actions > *', '.hero__scroll'], { autoAlpha: 0, y: 30 });
   gsap.set('.hero__img', { scale: 1.35 });
   gsap.set('.header', { yPercent: -100, autoAlpha: 0 });
 
@@ -89,8 +113,7 @@
     })
     .to('.hero__img', { scale: 1, duration: 2.2 }, '-=1.1')
     .to('.hero__title .word', { yPercent: 0, duration: 1.3, stagger: .1 }, '<.1')
-    .to('.hero__eyebrow', { autoAlpha: 1, y: 0, duration: 1 }, '<.2')
-    .to('.hero__tagline', { autoAlpha: 1, y: 0, duration: 1 }, '<.3')
+    .to('.hero__tagline', { autoAlpha: 1, y: 0, duration: 1 }, '<.5')
     .to('.hero__actions > *', { autoAlpha: 1, y: 0, duration: 1, stagger: .08 }, '<.15')
     .to('.header', { yPercent: 0, autoAlpha: 1, duration: 1 }, '<')
     .to('.hero__scroll', { autoAlpha: 1, y: 0, duration: 1 }, '<.2');
@@ -186,6 +209,16 @@
     });
   });
 
+  /* Actualités */
+  gsap.from('.news__feature', {
+    y: 80, autoAlpha: 0, duration: 1.3, ease: 'expo.out',
+    scrollTrigger: { trigger: '.news__grid', start: 'top 85%' },
+  });
+  gsap.from('.news__list li', {
+    x: 60, autoAlpha: 0, duration: 1.1, stagger: .12, ease: 'expo.out',
+    scrollTrigger: { trigger: '.news__grid', start: 'top 80%' },
+  });
+
   /* ==========================================================
      6. ACTIVITÉS — section épinglée, défilement horizontal
      ========================================================== */
@@ -252,6 +285,18 @@
     gsap.from(pool, {
       xPercent: i % 2 ? 12 : -12, autoAlpha: 0, duration: 1.3, ease: 'expo.out',
       scrollTrigger: { trigger: pool, start: 'top 92%' },
+    });
+  });
+
+  /* Adhésion : étapes et bloc groupes */
+  gsap.from('.steps li', {
+    y: 50, autoAlpha: 0, duration: 1.1, stagger: .1, ease: 'expo.out',
+    scrollTrigger: { trigger: '.steps', start: 'top 85%' },
+  });
+  ['.groups', '.fees', '.rules', '.membership__cta'].forEach((sel) => {
+    gsap.from(sel, {
+      y: 60, autoAlpha: 0, duration: 1.2, ease: 'expo.out',
+      scrollTrigger: { trigger: sel, start: 'top 88%' },
     });
   });
 
