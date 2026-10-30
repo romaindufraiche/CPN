@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Charte graphique — Cergy Pontoise Natation</title>
+  <meta name="theme-color" content="#06043A">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .guide { padding: 140px 0 120px; }
+    .guide section { padding: 72px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 260px 1fr; gap: 40px; }
+    .guide section > h2 { font-size: .8rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--sky); }
+    .guide__title { font-size: clamp(3rem, 9vw, 8rem); font-weight: 900; font-variation-settings: "wdth" 125; line-height: .88; letter-spacing: -.045em; text-transform: uppercase; margin-bottom: 32px; }
+    .guide__title em { color: var(--pink); font-variation-settings: "wdth" 62; text-transform: none; }
+    .note { color: var(--text-dim); max-width: 60ch; margin-top: 20px; }
+
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; }
+    .swatch { border-radius: 4px; overflow: hidden; border: 1px solid var(--line); }
+    .swatch__c { height: 140px; }
+    .swatch__t { padding: 14px 16px; font-size: .85rem; background: rgba(255,255,255,.03); }
+    .swatch__t b { display: block; font-size: 1rem; }
+    .swatch__t code { color: var(--text-dim); }
+    .ratio { display: flex; height: 26px; overflow: hidden; margin-top: 20px; }
+
+    .type-row { display: grid; grid-template-columns: 140px 1fr; gap: 24px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .type-row small { color: var(--text-dim); font-size: .78rem; letter-spacing: .08em; }
+
+    .logos { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+    .logo-tile { aspect-ratio: 4/3; border-radius: 4px; display: grid; place-items: center; gap: 12px; padding: 24px; }
+    .logo-tile img { width: 88px; }
+    .logo-tile span { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+
+    .components { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .motion-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+    .motion-list li { display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+    .motion-list b { color: var(--pink); }
+    .motion-list span { color: var(--text-dim); }
+
+    @media (max-width: 760px) {
+      .guide section { grid-template-columns: 1fr; gap: 24px; }
+      .type-row, .motion-list li { grid-template-columns: 1fr; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header is-scrolled">
+    <a class="brand" href="index.html" aria-label="Retour au site">
+      <img src="assets/img/logo.svg" alt="" width="40" height="40">
+      <span class="brand__text">Cergy Pontoise<br><b>Natation</b></span>
+    </a>
+    <a class="btn btn--ghost btn--sm" href="index.html">← Retour au site</a>
+  </header>
+
+  <main class="guide container">
+    <p class="eyebrow"><span class="num">CPN</span>Identité visuelle 2026</p>
+    <h1 class="guide__title">Charte<br><em>graphique</em></h1>
+    <p class="lead">Une identité simple, issue des couleurs historiques du club — le bleu nuit, le bleu roi et le magenta — modernisée par une typographie unique et un langage de mouvement inspiré de l'eau.</p>
+
+    <section>
+      <h2>01 — Couleurs</h2>
+      <div>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch__c" style="background:#050327"></div><div class="swatch__t"><b>Abysse</b><code>#050327</code><br>Fond principal</div></div>
+          <div class="swatch"><div class="swatch__c" style="background:#0A0752"></div><div class="swatch__t"><b>Bleu nuit</b><code>#0A0752</code><br>Fonds secondaires</div></div>
+          <div class="swatch"><div class="swatch__c" style="background:#0709A7"></div><div class="swatch__t"><b>Bleu roi</b><code>#0709A7</code><br>Couleur signature</div></div>
+          <div class="swatch"><div class="swatch__c" style="background:#E516A0"></div><div class="swatch__t"><b>Magenta</b><code>#E516A0</code><br>Accent, actions</div></div>
+          <div class="swatch"><div class="swatch__c" style="background:#3D9BE9"></div><div class="swatch__t"><b>Bassin</b><code>#3D9BE9</code><br>Repères, labels</div></div>
+          <div class="swatch"><div class="swatch__c" style="background:#EEF2FF"></div><div class="swatch__t"><b>Écume</b><code>#EEF2FF</code><br>Sections claires</div></div>
+        </div>
+        <div class="ratio" aria-label="Proportions d'usage">
+          <span style="flex:55;background:#050327;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)"></span>
+          <span style="flex:20;background:#0709A7"></span>
+          <span style="flex:10;background:#EEF2FF"></span>
+          <span style="flex:8;background:#3D9BE9"></span>
+          <span style="flex:7;background:#E516A0"></span>
+        </div>
+        <p class="note">Proportions : le bleu domine (≈ 75 %), l'écume aère, le magenta reste rare pour signaler l'action (boutons, mots clés, chiffres forts). Jamais de magenta sur bleu roi pour du texte courant.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>02 — Typographie</h2>
+      <div>
+        <div class="type-row"><small>Titre XXL<br>Archivo 900 · Expanded</small><span style="font-size:clamp(2.6rem,6vw,4.5rem);font-weight:900;font-variation-settings:'wdth' 125;letter-spacing:-.045em;line-height:.9;text-transform:uppercase">Natation</span></div>
+        <div class="type-row"><small>Accent<br>Archivo 800 · Condensed italique</small><span style="font-size:clamp(2rem,5vw,3.5rem);font-weight:800;font-style:italic;font-variation-settings:'wdth' 62;color:var(--pink)">… nager comme on aime</span></div>
+        <div class="type-row"><small>Titre H2<br>Archivo 800 · Normal</small><span style="font-size:2.2rem;font-weight:800;letter-spacing:-.035em;text-transform:uppercase">Quatre piscines</span></div>
+        <div class="type-row"><small>Label<br>Archivo 600 · 0.18em</small><span style="font-size:.8rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sky)">Saison 2026 — 2027</span></div>
+        <div class="type-row"><small>Texte<br>Archivo 400 · 17px</small><span style="color:var(--text-dim)">L'école de natation de Cergy-Pontoise garantit un apprentissage de qualité et de sécurité, dispensé par des éducateurs diplômés.</span></div>
+        <p class="note">Une seule famille variable — Archivo — joue sur sa largeur : étendue pour la puissance, condensée italique pour l'émotion.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>03 — Logo</h2>
+      <div>
+        <div class="logos">
+          <div class="logo-tile" style="background:#050327;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)"><img src="assets/img/logo.svg" alt="Monogramme CPN sur fond sombre"><span>Fond sombre</span></div>
+          <div class="logo-tile" style="background:#EEF2FF;color:#0A0752"><img src="assets/img/logo.svg" alt="Monogramme CPN sur fond clair"><span>Fond clair</span></div>
+          <div class="logo-tile" style="background:#E516A0"><img src="assets/img/logo.svg" alt="Monogramme CPN sur magenta"><span>Fond magenta</span></div>
+        </div>
+        <p class="note">Le monogramme : trois lignes d'eau aux couleurs du club, dans un cercle bleu roi. Zone de protection = la hauteur d'une vague autour du cercle. Taille minimum : 24 px.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>04 — Composants</h2>
+      <div>
+        <div class="components">
+          <a class="btn btn--pink" href="#">Action principale</a>
+          <a class="btn btn--ghost" href="#">Action secondaire</a>
+          <a class="btn btn--light" href="#">Sur fond bleu</a>
+          <span class="tag" style="background:rgba(255,255,255,.12)">Étiquette</span>
+        </div>
+        <p class="note">Angles nets : 2 px pour les boutons et étiquettes, 4 px pour les cartes. Filets à 14 % de blanc, lignes d'eau horizontales en motif. Au survol, le fond d'un bouton se remplit comme un bassin qui monte.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>05 — Mouvement</h2>
+      <div>
+        <ul class="motion-list">
+          <li><b>Intro</b><span>L'eau monte dans « CPN », puis trois vagues de couleur (bassin, magenta, bleu roi) dévoilent la page.</span></li>
+          <li><b>Révélation</b><span>Les éléments remontent de 70 px en fondu, courbe <code>expo.out</code>, 1,2 s.</span></li>
+          <li><b>Scrub</b><span>Les grands effets suivent le doigt : mots qui s'allument, ligne d'eau qui se trace, goutte qui s'étend.</span></li>
+          <li><b>Horizontal</b><span>Les activités défilent latéralement comme une longueur de bassin.</span></li>
+          <li><b>Accessibilité</b><span>Avec « réduire les animations » activé, le site s'affiche immédiatement, sans mouvement.</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
